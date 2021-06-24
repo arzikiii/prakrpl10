@@ -5,30 +5,24 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
-import androidx.navigation.Navigation
 import com.finalproject.queue.R
-import com.finalproject.queue.databinding.FragmentCreateQueueBinding
+import com.finalproject.queue.databinding.FragmentAdminQueueBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 
 /**
  * A simple [Fragment] subclass.
- * Use the [CreateQueueFragment.newInstance] factory method to
+ * Use the [AdminQueueFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class CreateQueueFragment : Fragment() {
+class AdminQueueFragment : Fragment() {
 
-    private lateinit var binding: FragmentCreateQueueBinding
-
+    private lateinit var binding: FragmentAdminQueueBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_create_queue, container, false)
-        binding.batal.setOnClickListener {
-            Navigation.findNavController(it).popBackStack()
-        }
-        return binding.root
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_admin_queue, container, false)
     }
 }

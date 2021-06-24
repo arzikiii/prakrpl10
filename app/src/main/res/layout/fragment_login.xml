@@ -3,122 +3,109 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <RelativeLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingLeft="10dp"
+        android:paddingLeft="24dp"
         android:paddingTop="10dp"
-        android:paddingRight="10dp"
+        android:paddingRight="24dp"
         android:paddingBottom="10dp"
         android:background="@drawable/user_full_background"
         tools:context=".userFragment.LoginFragment">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Sign In"
-            android:textColor="@color/black"
-            android:textSize="30dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        <ImageView
+            android:id="@+id/user_logo"
+            android:layout_width="300dp"
+            android:layout_height="280dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/idcard" />
 
-        <EditText
-            android:id="@+id/username"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="96dp"
-            android:layout_marginEnd="24dp"
-            android:hint="email"
-            android:inputType="textEmailAddress"
-            android:selectAllOnFocus="true"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <EditText
-            android:id="@+id/password"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="24dp"
-            android:hint="password"
-            android:imeActionLabel="sign_in"
-            android:imeOptions="actionDone"
-            android:inputType="textPassword"
-            android:selectAllOnFocus="true"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/username" />
-
-        <Button
+        <androidx.cardview.widget.CardView
             android:id="@+id/login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="24dp"
-            android:layout_marginBottom="64dp"
-            android:backgroundTint="@color/purple_500"
+            android:backgroundTint="@color/teal_700"
             android:enabled="true"
-            android:text="@string/sign_in"
-            android:textColor="@color/white"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/password"
-            app:layout_constraintVertical_bias="0.2" />
+            android:padding="10dp"
+            app:cardCornerRadius="5dp"
+            android:layout_below="@id/roles"
+            android:layout_marginTop="30dp">
 
-        <Button
-            android:id="@+id/register"
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical|center_horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/tombol_role"
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/white"
+                    android:layout_height="wrap_content"
+                    android:text="Masuk Sebagai USER"/>
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/logout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="24dp"
-            android:layout_marginBottom="64dp"
-            android:enabled="false"
-            android:text="register"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/login"
-            app:layout_constraintVertical_bias="0.098" />
+            android:backgroundTint="#ff5555"
+            android:enabled="true"
+            android:layout_below="@id/login"
+            android:padding="10dp"
+            app:cardCornerRadius="5dp"
+            android:layout_marginTop="30dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical|center_horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/sign_out"
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/white"
+                    android:layout_height="wrap_content"
+                    android:text="Sign Out" />
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
 
         <RadioGroup
             android:id="@+id/roles"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="94dp"
+            android:layout_marginBottom="10dp"
             android:gravity="center_horizontal"
             android:orientation="horizontal"
-            app:layout_constraintBottom_toTopOf="@+id/login"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
             android:visibility="visible"
-            app:layout_constraintTop_toBottomOf="@+id/password"
-            app:layout_constraintVertical_bias="0.0">
+            android:layout_marginTop="380dp">
 
             <RadioButton
                 android:id="@+id/user_role"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="User"
-                android:checked="true"/>
+                android:textSize="30dp"
+                android:layout_marginEnd="15dp"
+                android:checked="true"
+                android:text="User" />
 
             <RadioButton
                 android:id="@+id/admin_role"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:textSize="30dp"
                 android:text="Admin" />
 
         </RadioGroup>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
 </layout>
